@@ -3,7 +3,7 @@ using UnityEngine;
 public interface IInteractable
 {
     void Hover();
-    void Select();
     void Hold();
+    void Select();
     void Release();
 }

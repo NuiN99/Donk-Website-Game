@@ -6,6 +6,8 @@ public class MainCamera : MonoBehaviour
 
     [field: SerializeField] public Camera Camera { get; private set; }
 
+    public Vector2 MousePosition => Camera.ScreenToWorldPoint(Input.mousePosition);
+
     void Awake()
     {
         if (Instance != null && Instance != this)

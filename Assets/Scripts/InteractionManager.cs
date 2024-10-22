@@ -47,7 +47,7 @@ public class InteractionManager : MonoBehaviour
 
     IInteractable GetRaycastedInteractable()
     {
-        Vector2 mousePos = MainCamera.Instance.Camera.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 mousePos = MainCamera.Instance.MousePosition;
         Collider2D hitCol = Physics2D.OverlapCircle(mousePos, rayRadius);
 
         if (hitCol == null || !hitCol.TryGetComponent(out IInteractable interactable) || interactable == _curInteractable)
