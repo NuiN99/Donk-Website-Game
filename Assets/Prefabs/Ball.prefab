@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7439571037550989760}
   - component: {fileID: 1620169612856261762}
   - component: {fileID: 7297605511906663368}
+  - component: {fileID: -3621435992600953364}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -135,7 +136,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 0b0c0e6545841c942866c4bc26360b19, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -156,12 +157,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.9590643, g: 0.6745283, b: 1, a: 1}
+  m_Sprite: {fileID: -1491870641885638992, guid: 2e46375802b041e4b95e65b55983e1d5, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.99832773, y: 0.99832773}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -230,3 +231,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &-3621435992600953364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518548933449298500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed84b7038be84c6da7823fa1a3c9104d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainTexture: {fileID: 2800000, guid: 2e46375802b041e4b95e65b55983e1d5, type: 3}
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  baseColor: {r: 0.9607843, g: 0.6745098, b: 1, a: 1}
+  outlineWidth: 100
