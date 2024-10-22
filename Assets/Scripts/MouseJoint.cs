@@ -28,14 +28,14 @@ public class MouseJoint : MonoBehaviour
     
     public void Attach(Rigidbody2D rb)
     {
-        _prevAttachedDrag = rb.drag;
+        _prevAttachedDrag = rb.linearDamping;
         joint.connectedBody = rb;
-        joint.connectedBody.drag = attachedDrag;
+        joint.connectedBody.linearDamping = attachedDrag;
     }
 
     public void Detach()
     {
-        joint.connectedBody.drag = _prevAttachedDrag;
+        joint.connectedBody.linearDamping = _prevAttachedDrag;
         joint.connectedBody = null;
     }
 }
