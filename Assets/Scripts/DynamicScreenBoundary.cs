@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DynamicScreenBoundary : MonoBehaviour
 {
-    [SerializeField] Camera cam;
     [SerializeField] float colliderWidth;
     
     void Start()
@@ -32,6 +31,6 @@ public class DynamicScreenBoundary : MonoBehaviour
     void FixedUpdate()
     {
         Vector2 screenSize = new Vector2(Screen.width, Screen.height);
-        transform.localScale = cam.ScreenToWorldPoint(screenSize) * 2f;
+        transform.localScale = MainCamera.Instance.Camera.ScreenToWorldPoint(screenSize) * 2f;
     }
 }
