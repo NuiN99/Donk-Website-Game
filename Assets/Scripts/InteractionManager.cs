@@ -5,9 +5,9 @@ public class InteractionManager : MonoBehaviour
 {
     [SerializeField] float rayRadius;
     
-    IInteractable _curInteractable;
-    IInteractable _lastHoveredInteractable;
-    IInteractable _lastReleasedInteractable;
+    InteractableEvents _curInteractable;
+    InteractableEvents _lastHoveredInteractable;
+    InteractableEvents _lastReleasedInteractable;
     Controls _controls;
     
     void OnEnable()
@@ -45,12 +45,12 @@ public class InteractionManager : MonoBehaviour
         }
     }
 
-    IInteractable GetRaycastedInteractable()
+    InteractableEvents GetRaycastedInteractable()
     {
         Vector2 mousePos = MainCamera.Instance.MousePosition;
         Collider2D hitCol = Physics2D.OverlapCircle(mousePos, rayRadius);
 
-        if (hitCol == null || !hitCol.TryGetComponent(out IInteractable interactable) || interactable == _curInteractable)
+        if (hitCol == null || !hitCol.TryGetComponent(out InteractableEvents interactable) || interactable == _curInteractable)
         {
             return null;
         }
@@ -65,14 +65,14 @@ public class InteractionManager : MonoBehaviour
 
     void TryHover()
     {
-        IInteractable hoveredInteractable = GetRaycastedInteractable();
+        InteractableEvents hoveredInteractable = GetRaycastedInteractable();
 
         if (_lastReleasedInteractable != hoveredInteractable)
         {
             _lastReleasedInteractable = null;
-            if (hoveredInteractable != _lastHoveredInteractable)
+            if (hoveredInteractable != _lastHoveredInteractable && hoveredInteractable != null)
             {
-                hoveredInteractable?.Hover();
+                hoveredInteractable.Hover();
             }
         }
         
@@ -81,7 +81,7 @@ public class InteractionManager : MonoBehaviour
 
     void TrySelect()
     {
-        IInteractable selectedInteractable = GetRaycastedInteractable();
+        InteractableEvents selectedInteractable = GetRaycastedInteractable();
         if(selectedInteractable == null)
         {
             return;
