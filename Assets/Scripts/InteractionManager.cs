@@ -65,18 +65,28 @@ public class InteractionManager : MonoBehaviour
 
     void TryHover()
     {
+        if(_curInteractable != null) return;
+        
         InteractableEvents hoveredInteractable = GetRaycastedInteractable();
 
-        if (_lastReleasedInteractable != hoveredInteractable)
+        if (hoveredInteractable == null)
         {
-            _lastReleasedInteractable = null;
-            if (hoveredInteractable != _lastHoveredInteractable && hoveredInteractable != null)
+            if (_lastHoveredInteractable != null)
             {
-                hoveredInteractable.Hover();
+                _lastHoveredInteractable.HoverEnd();
+                _lastHoveredInteractable = null;
             }
         }
-        
-        _lastHoveredInteractable = hoveredInteractable;
+        else 
+        {
+            if (_lastHoveredInteractable == null || _lastHoveredInteractable != hoveredInteractable)
+            {
+                _lastHoveredInteractable = hoveredInteractable;
+                _lastHoveredInteractable.HoverStart();
+            }
+            
+            hoveredInteractable.Hover();
+        }
     }
 
     void TrySelect()
@@ -88,7 +98,7 @@ public class InteractionManager : MonoBehaviour
         }
 
         _curInteractable = selectedInteractable;
-        _curInteractable.Select();
+        _curInteractable.HoldStart();
     }
 
     void TryRelease()
@@ -100,7 +110,7 @@ public class InteractionManager : MonoBehaviour
 
         _lastReleasedInteractable = _curInteractable;
         
-        _curInteractable.Release();
+        _curInteractable.HoldEnd();
         _curInteractable = null;
     }
 }

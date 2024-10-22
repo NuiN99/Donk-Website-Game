@@ -4,12 +4,18 @@ using UnityEngine;
 public class InteractableEvents : MonoBehaviour
 {
     public event Action OnHover = delegate { };
+    public event Action OnHoverStart = delegate { };
+    public event Action OnHoverEnd = delegate { };
+
     public event Action OnHold = delegate { };
-    public event Action OnSelect = delegate { }; 
-    public event Action OnRelease = delegate { };
+    public event Action OnHoldStart = delegate { }; 
+    public event Action OnHoldEnd = delegate { };
 
     public void Hover() => OnHover.Invoke();
+    public void HoverStart() => OnHoverStart.Invoke();
+    public void HoverEnd() => OnHoverEnd.Invoke();
+
     public void Hold() => OnHold.Invoke();
-    public void Select() => OnSelect.Invoke();
-    public void Release() => OnRelease.Invoke();
+    public void HoldStart() => OnHoldStart.Invoke();
+    public void HoldEnd() => OnHoldEnd.Invoke();
 }
