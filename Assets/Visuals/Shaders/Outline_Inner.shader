@@ -54,7 +54,7 @@ Shader "Unlit/InnerSpriteOutline HLSL"
 
             fixed4 frag (v2f i) : SV_Target
             {
-                fixed4 col = tex2D(_MainTex, i.uv);
+                fixed4 col = _Color;
 
                 if (_OutlineWidth <= 0)
                 {
@@ -89,7 +89,7 @@ Shader "Unlit/InnerSpriteOutline HLSL"
 
                 if (col.a > 0.0)
                 {
-                    return col * _Color;
+                    return _Color;
                 }
 
                 return fixed4(0, 0, 0, 0);
