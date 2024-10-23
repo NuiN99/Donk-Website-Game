@@ -4,10 +4,14 @@ using UnityEngine;
 public class InteractableHoverTween : InteractableEventsReciever
 {
     [SerializeField] Transform target;
+    
+    [Header("Scale Tween")]
     [SerializeField] Vector2 targetScale;
-    [SerializeField] float scaleDuration;
-    [SerializeField] AnimationCurve scaleEase;
-
+    [SerializeField] float scaleOutDuration;
+    [SerializeField] Ease scaleOutEase;
+    [SerializeField] float scaleInDuration;
+    [SerializeField] Ease scaleInEase;
+    
     ITween _scaleTween;
     Vector2 _initialScale;
     
@@ -23,18 +27,28 @@ public class InteractableHoverTween : InteractableEventsReciever
 
     protected override void HoverStart()
     {
-        if (_scaleTween is { Active: true })
-        {
-            return;
-        }
-
         _scaleTween?.Stop();
-        _scaleTween = SpleenTween.Scale(target, _initialScale, targetScale, scaleDuration).SetEase(scaleEase);
+        _scaleTween = SpleenTween.Scale(target, _initialScale, targetScale, scaleInDuration).SetEase(scaleInEase);
     }
 
     protected override void HoverEnd()
     {
-        
+        if (_scaleTween.Active == false)
+        {
+            _scaleTween?.Stop();
+            TweenScaleOut();
+        }
+        else
+        {
+            _scaleTween.OnComplete(TweenScaleOut);
+        }
+
+        return;
+
+        void TweenScaleOut()
+        {
+            _scaleTween = SpleenTween.Scale(target, targetScale, _initialScale, scaleOutDuration).SetEase(scaleOutEase);
+        }
     }
 
     protected override void Hold() { }

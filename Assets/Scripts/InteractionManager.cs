@@ -79,8 +79,18 @@ public class InteractionManager : MonoBehaviour
         }
         else 
         {
-            if (_lastHoveredInteractable == null || _lastHoveredInteractable != hoveredInteractable)
+            if (_lastHoveredInteractable == null)
             {
+                _lastHoveredInteractable = hoveredInteractable;
+                _lastHoveredInteractable.HoverStart();
+            }
+            else if (_lastHoveredInteractable != hoveredInteractable)
+            {
+                if (_lastHoveredInteractable != null)
+                {
+                    _lastHoveredInteractable.HoverEnd();
+                }
+                
                 _lastHoveredInteractable = hoveredInteractable;
                 _lastHoveredInteractable.HoverStart();
             }

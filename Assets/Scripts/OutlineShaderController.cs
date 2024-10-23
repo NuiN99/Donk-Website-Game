@@ -1,33 +1,36 @@
+using NuiN.NExtensions;
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class OutlineShaderController : MonoBehaviour
 {
-    SpriteRenderer _spriteRenderer;
-    Material _material;
+    static readonly int MainTex = Shader.PropertyToID("_MainTex");
+    static readonly int OutlineColor = Shader.PropertyToID("_OutlineColor");
+    static readonly int Color1 = Shader.PropertyToID("_Color");
+    static readonly int OutlineWidth = Shader.PropertyToID("_OutlineWidth");
+    
+    [SerializeField, InjectComponent] SpriteRenderer spriteRenderer;
 
     [Header("Shader Properties")]
     public Texture mainTexture;
     public Color outlineColor = Color.white;
     public Color baseColor = Color.white;
     public float outlineWidth = 1.0f;
-
-    void Awake()
+    
+    void Update()
     {
-        _spriteRenderer = GetComponent<SpriteRenderer>();
-        _material = new Material(Shader.Find("Unlit/InnerSpriteOutline HLSL"));
-        _spriteRenderer.material = _material;
+        UpdateMaterial();
     }
 
-    void Update()
+    void UpdateMaterial()
     {
         if (mainTexture != null)
         {
-            _material.SetTexture("_MainTex", mainTexture);
+            spriteRenderer.material.SetTexture(MainTex, mainTexture);
         }
 
-        _material.SetColor("_OutlineColor", outlineColor);
-        _material.SetColor("_Color", baseColor);
-        _material.SetFloat("_OutlineWidth", outlineWidth);
+        spriteRenderer.material.SetColor(OutlineColor, outlineColor);
+        spriteRenderer.material.SetColor(Color1, baseColor);
+        spriteRenderer.material.SetFloat(OutlineWidth, outlineWidth);
     }
 }
