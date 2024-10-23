@@ -50,7 +50,6 @@ public class InteractableOutlineTween : InteractableEventsReciever
         {
             _thicknessTween?.Stop();
             ScaleOutTween();
-            
         }
         else
         {

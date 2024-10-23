@@ -6,8 +6,10 @@ public class MouseJoint : MonoBehaviour
 
     [SerializeField] SpringJoint2D joint;
     [SerializeField] float attachedDrag;
+    [SerializeField] float attachedAngularDrag;
 
     float _prevAttachedDrag;
+    float _prevAttachedAngularDrag;
 
     void Awake()
     {
@@ -29,13 +31,17 @@ public class MouseJoint : MonoBehaviour
     public void Attach(Rigidbody2D rb)
     {
         _prevAttachedDrag = rb.linearDamping;
+        _prevAttachedAngularDrag = rb.angularDamping;
+        
         joint.connectedBody = rb;
         joint.connectedBody.linearDamping = attachedDrag;
+        joint.connectedBody.angularDamping = attachedAngularDrag;
     }
 
     public void Detach()
     {
         joint.connectedBody.linearDamping = _prevAttachedDrag;
+        joint.connectedBody.angularDamping = _prevAttachedAngularDrag;
         joint.connectedBody = null;
     }
 }

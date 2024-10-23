@@ -98,7 +98,7 @@ MonoBehaviour:
   targetScale: {x: 1.25, y: 1.25}
   scaleInDuration: 0.1
   scaleInEase: 2
-  scaleOutDuration: 0.1
+  scaleOutDuration: 0.5
   scaleOutEase: 3
 --- !u!114 &-1114539767489669304
 MonoBehaviour:
@@ -114,12 +114,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactableEvents: {fileID: 8956191508917818124}
   target: {fileID: -3621435992600953364}
-  targetThickness: 100
-  targetOutlineColor: {r: 0.35283017, g: 1, b: 0.97878134, a: 1}
-  targetBaseColor: {r: 0.9607843, g: 0.6745098, b: 1, a: 1}
+  targetThickness: 90
+  targetOutlineColor: {r: 0, g: 0, b: 0, a: 1}
+  targetBaseColor: {r: 0.3529412, g: 1, b: 0.98039216, a: 1}
   inDuration: 0.1
   inEase: 2
-  outDuration: 0.1
+  outDuration: 0.5
   outEase: 3
 --- !u!212 &7439571037550989760
 SpriteRenderer:
