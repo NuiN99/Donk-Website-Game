@@ -425,7 +425,10 @@ PlayerSettings:
   openGLRequireES31AEP: 0
   openGLRequireES32: 0
   m_TemplateCustomTags:
+    BACKGROUND: FFFFFF
+    OPTIMIZE_FOR_PIXEL_ART: 
     PRODUCT_DESCRIPTION: 
+    SCALE_TO_FIT: 
     TOTAL_MEMORY: 
   mobileMTRendering:
     Android: 1
@@ -687,7 +690,7 @@ PlayerSettings:
   webGLDebugSymbols: 0
   webGLEmscriptenArgs: 
   webGLModulesDirectory: 
-  webGLTemplate: PROJECT:Modern
+  webGLTemplate: PROJECT:BetterMinimal
   webGLAnalyzeBuildSize: 0
   webGLUseEmbeddedResources: 0
   webGLCompressionFormat: 0
