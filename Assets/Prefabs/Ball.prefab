@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 493094509141672955}
   - component: {fileID: 8956191508917818124}
+  - component: {fileID: -3621435992600953364}
   - component: {fileID: 6802316755562841595}
   - component: {fileID: 5818842097459252195}
-  - component: {fileID: -3621435992600953364}
+  - component: {fileID: -1114539767489669304}
   - component: {fileID: 7439571037550989760}
   - component: {fileID: 1620169612856261762}
   - component: {fileID: 7297605511906663368}
@@ -50,6 +51,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9823aee85aad4aff86dc0c53958dc514, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-3621435992600953364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518548933449298500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed84b7038be84c6da7823fa1a3c9104d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 7439571037550989760}
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  baseColor: {r: 0.9607843, g: 0.6745098, b: 1, a: 1}
+  thickness: 100
 --- !u!114 &6802316755562841595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,11 +96,11 @@ MonoBehaviour:
   interactableEvents: {fileID: 8956191508917818124}
   target: {fileID: 493094509141672955}
   targetScale: {x: 1.25, y: 1.25}
-  scaleOutDuration: 0.1
-  scaleOutEase: 3
   scaleInDuration: 0.1
   scaleInEase: 2
---- !u!114 &-3621435992600953364
+  scaleOutDuration: 0.1
+  scaleOutEase: 3
+--- !u!114 &-1114539767489669304
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,14 +109,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 518548933449298500}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed84b7038be84c6da7823fa1a3c9104d, type: 3}
+  m_Script: {fileID: 11500000, guid: 7058e57927c5474d925387ab5bd5cda8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 7439571037550989760}
-  mainTexture: {fileID: 2800000, guid: 2e46375802b041e4b95e65b55983e1d5, type: 3}
-  outlineColor: {r: 0, g: 0, b: 0, a: 1}
-  baseColor: {r: 0.9607843, g: 0.6745098, b: 1, a: 1}
-  outlineWidth: 100
+  interactableEvents: {fileID: 8956191508917818124}
+  target: {fileID: -3621435992600953364}
+  targetThickness: 100
+  targetOutlineColor: {r: 0.35283017, g: 1, b: 0.97878134, a: 1}
+  targetBaseColor: {r: 0.9607843, g: 0.6745098, b: 1, a: 1}
+  inDuration: 0.1
+  inEase: 2
+  outDuration: 0.1
+  outEase: 3
 --- !u!212 &7439571037550989760
 SpriteRenderer:
   m_ObjectHideFlags: 0

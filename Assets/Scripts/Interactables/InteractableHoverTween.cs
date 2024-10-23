@@ -7,10 +7,10 @@ public class InteractableHoverTween : InteractableEventsReciever
     
     [Header("Scale Tween")]
     [SerializeField] Vector2 targetScale;
-    [SerializeField] float scaleOutDuration;
-    [SerializeField] Ease scaleOutEase;
     [SerializeField] float scaleInDuration;
     [SerializeField] Ease scaleInEase;
+    [SerializeField] float scaleOutDuration;
+    [SerializeField] Ease scaleOutEase;
     
     ITween _scaleTween;
     Vector2 _initialScale;
