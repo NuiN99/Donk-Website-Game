@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 7439571037550989760}
   outlineColor: {r: 0, g: 0, b: 0, a: 1}
-  baseColor: {r: 0.9607843, g: 0.6745098, b: 1, a: 1}
+  baseColor: {r: 0.3529412, g: 1, b: 0.98039216, a: 1}
   thickness: 100
 --- !u!114 &6802316755562841595
 MonoBehaviour:
@@ -151,7 +151,7 @@ MonoBehaviour:
   target: {fileID: -3621435992600953364}
   targetThickness: 90
   targetOutlineColor: {r: 0, g: 0, b: 0, a: 1}
-  targetBaseColor: {r: 0.3529412, g: 1, b: 0.98039216, a: 1}
+  targetBaseColor: {r: 0.9607843, g: 0.6745098, b: 1, a: 1}
   inDuration: 0.1
   inEase: 2
   outDuration: 0.5
@@ -174,7 +174,7 @@ MonoBehaviour:
   minExplosionForce: 1
   maxExplosionForce: 20
   particles: {fileID: 0}
-  prefabToSpawn: {fileID: 11400000, guid: 0559dc4d5e87b5946bda4b07908c5d76, type: 2}
+  prefabToSpawn: {fileID: 11400000, guid: c895d8d6fe76b544bab78488f8be7eca, type: 2}
   prefabSpawnPoints:
   - {fileID: 9020600412339307510}
   - {fileID: 8442761817289747221}
