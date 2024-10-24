@@ -47,7 +47,7 @@ public class RandomExploder : MonoBehaviour
             {
                 if (spawnedObj == cloneToKeep)
                 {
-                    SpleenTween.Scale(spawnedObj.transform, prefabToSpawn.Prefab.transform.localScale, cloneToKeepScaleDuration).SetEase(cloneToKeepScaleEase);
+                    //SpleenTween.Scale(spawnedObj.transform, prefabToSpawn.Prefab.transform.localScale, cloneToKeepScaleDuration).SetEase(cloneToKeepScaleEase);
                 }
                 else
                 {
@@ -58,7 +58,7 @@ public class RandomExploder : MonoBehaviour
             }
         });
         
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
+        /*Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
         foreach (var col in colliders)
         {
             if (col.TryGetComponent(out Rigidbody2D hitRB))
@@ -71,7 +71,7 @@ public class RandomExploder : MonoBehaviour
                 
                 hitRB.AddForce(explosionDirection * explosionForce, ForceMode2D.Impulse);
             }
-        }
+        }*/
         
         Destroy(gameObject);
     }

@@ -129,7 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactableEvents: {fileID: 8956191508917818124}
   target: {fileID: 493094509141672955}
-  targetHoverScaleMult: 1.25
+  targetHoverScaleMult: 1.1
   hoverScaleInDuration: 0.1
   hoverScaleInEase: 2
   hoverScaleOutDuration: 0.5
@@ -168,17 +168,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9735123ad1314bc6852740547105991f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minTime: 10
-  maxTime: 120
-  explosionRadius: 3
-  minExplosionForce: 1
-  maxExplosionForce: 20
+  minTime: 29
+  maxTime: 30
+  explosionRadius: 0
+  minExplosionForce: 0
+  maxExplosionForce: 0
   particles: {fileID: 0}
   prefabToSpawn: {fileID: 11400000, guid: c895d8d6fe76b544bab78488f8be7eca, type: 2}
   prefabSpawnPoints:
   - {fileID: 9020600412339307510}
-  - {fileID: 8442761817289747221}
-  - {fileID: 1424270678799816601}
   cloneScaleMult: 0.5
   finalizeClonesDuration: 2
   cloneToKeepScaleDuration: 0.5
