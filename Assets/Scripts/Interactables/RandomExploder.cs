@@ -36,8 +36,7 @@ public class RandomExploder : MonoBehaviour
         foreach (var spawnPoint in prefabSpawnPoints)
         {
             PoolObject obj = Instantiate(prefabToSpawn.Prefab, spawnPoint.position, spawnPoint.rotation);
-            
-            obj.transform.localScale *= cloneScaleMult;
+            SpleenTween.Scale(obj.transform, Vector3.zero, obj.transform.localScale *= cloneScaleMult, cloneToKeepScaleDuration).SetEase(cloneToKeepScaleEase);
             spawnedObjs.Add(obj);
         }
 
@@ -52,7 +51,9 @@ public class RandomExploder : MonoBehaviour
                 }
                 else
                 {
-                    Destroy(spawnedObj.gameObject);
+                    SpleenTween.Scale(spawnedObj.transform, Vector3.zero, cloneToKeepScaleDuration)
+                        .SetEase(Ease.InExpo)
+                        .OnComplete(() => Destroy(spawnedObj.gameObject));
                 }
             }
         });
